@@ -1,7 +1,8 @@
+% EE551000 System Theory
 % Model Predictive Control Using FPGA
+% 2018/06/15 106061531 Fu-En Wang
 
 clear;
-
 %% state-space model
 Am = [-0.0001 -0.0000; 3.3864 0.9974];
 Bm = [0.0025; 0.2594];
