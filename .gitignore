@@ -1,1 +1,9 @@
 *.swp
+*~
+*.aux
+*.dvi
+*.log
+*.out
+*.bcf
+*.xml
+*.asv
