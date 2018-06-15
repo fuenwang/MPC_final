@@ -1,14 +1,1 @@
-*.pyc
 *.swp
-.fuse*
-*experiment
-experiment*
-save*
-*pth.tar
-exp/*/
-exp_real/*/
-exp_mp3d/*/
-data/
-output/
-gg.py
-exp*/*/
