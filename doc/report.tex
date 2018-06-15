@@ -188,6 +188,41 @@
 \newpage
 
 \section{Introduction}
+This journal paper (\textbf{Model Predictive Control Using FPGA}) is trying to use MPC for motor speed control. In addition, they also deploy their
+method into FPGA. So they will varify their algorithm and model parameters by MATLAB and then convert the code to C program. Afterwards,
+they will use the SDK provided by FPGA manufacturer to export program into FPGA board.
+
+In this report, I will implement the MPC algorithm to simulate the system provided by this paper.
+
+\subsection{Model Predictive Control}
+Give a state-space model as
+\begin{align}
+    x(k+1) &= A_mx(k) + B_mu(k) \\
+    y(k) &= C_mx(k)
+\end{align}
+then we can further create augmeted model
+\begin{align}
+    x(k+1) &= Ax(k) + Bu(k) \\
+    y(k) &= Cx(k)
+\end{align}
+
+For each time of iteration, we will use Quadratic Programming to solve an non-linear system
+\begin{align}
+    & \min_{\Delta U}{\frac{1}{2}\Delta U^TH\Delta U + \Delta U^Tf} \\
+    & A\Delta U \leq b
+\end{align}
+In \textbf{Receding Horizon Control}, we will only use the first element of $\Delta U$ and re-compute the QP for next iteration.
+
+\section{Simulation Result}
+in this paper, the state-space model is
+\begin{align}
+    A_m &= \begin{bmatrix} -0.0001 & 0 \\ 3.3864 & 0.9974 \end{bmatrix} \\
+    B_m &= \begin{bmatrix} 0.0025 \\ 0.2594  \end{bmatrix} \\
+    C_m &= \begin{bmatrix} 0 \\ 1  \end{bmatrix} \\
+    N_c &= 3 \\
+    N_p &= 10
+\end{align}
+
 
 \end{document}
 
