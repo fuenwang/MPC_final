@@ -74,7 +74,7 @@ ylim([0, 1.4])
 xlabel('Duration Time');
 ylabel('Motor Speed');
 title('Output')
-saveFig(fig, '/media/external/Fu-En.Wang/MPC_final/doc/src/output.pdf');
+%saveFig(fig, '/media/external/Fu-En.Wang/MPC_final/doc/src/output.pdf');
           
 fig = figure();
 plot((1:size(all_u(1:end), 2))*delta_t, all_u(1:end), 'b', 'linewidth', 2);
@@ -82,10 +82,10 @@ ylim([5 11.5])
 xlabel('Duration Time');
 ylabel('Applied Voltage');
 title('Input')
-saveFig(fig, '/media/external/Fu-En.Wang/MPC_final/doc/src/input.pdf');
+%saveFig(fig, '/media/external/Fu-En.Wang/MPC_final/doc/src/input.pdf');
 
     
- 
+   
 
 
 
