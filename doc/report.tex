@@ -214,7 +214,8 @@ For each time of iteration, we will use Quadratic Programming to solve an non-li
 In \textbf{Receding Horizon Control}, we will only use the first element of $\Delta U$ and re-compute the QP for next iteration.
 
 \section{Simulation Result}
-in this paper, the state-space model is
+\subsection{System Model}
+In this paper, the state-space model is
 \begin{align}
     A_m &= \begin{bmatrix} -0.0001 & 0 \\ 3.3864 & 0.9974 \end{bmatrix} \\
     B_m &= \begin{bmatrix} 0.0025 \\ 0.2594  \end{bmatrix} \\
@@ -222,7 +223,57 @@ in this paper, the state-space model is
     N_c &= 3 \\
     N_p &= 10
 \end{align}
+However, in this paper they say the weight matrix $Q$ and $R$ need to be finetune but they didn't give me the exact value. So the matrix $H$ is unknown 
+and I directly use the matrix provided in class book with
+\begin{align}
+    H &= \Phi^T\Phi + \bar{R} \\
+    f &= -2\Phi^T(R_s - Fx(k_i))
+\end{align}
 
+\subsection{Result}
+Fig.~\ref{fig:ori-input} and \ref{fig:input} is the predicted control sigal from the paper and my implementation, respectively.
+
+\begin{minipage}{\textwidth}
+    \begin{minipage}{0.6\textwidth}
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=\textwidth]{src/ori_input.png}
+            \caption{The predicted control value $u$ in the paper.}
+            \label{fig:ori-input}
+        \end{figure}
+    \end{minipage}
+    \begin{minipage}{0.4\textwidth}
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=\textwidth]{src/input.pdf}
+            \caption{The predicted control value $u$ with my implementation.}
+            \label{fig:input}
+        \end{figure}
+    \end{minipage}
+
+\end{minipage}
+
+Fig.~\ref{fig:ori-output} and \ref{fig:output} is the output sigal from the paper and my implementation, respectively.
+
+\begin{minipage}{\textwidth}
+    \begin{minipage}{0.6\textwidth}
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=\textwidth]{src/ori_output.png}
+            \caption{The output signal $y$ in the paper.}
+            \label{fig:ori-output}
+        \end{figure}
+    \end{minipage}
+    \begin{minipage}{0.4\textwidth}
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=\textwidth]{src/output.pdf}
+            \caption{The output signal $y$ with my implementation.}
+            \label{fig:output}
+        \end{figure}
+    \end{minipage}
+
+\end{minipage}
 
 \end{document}
 
