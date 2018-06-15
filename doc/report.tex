@@ -238,7 +238,7 @@ Fig.~\ref{fig:ori-input} and \ref{fig:input} is the predicted control sigal from
         \begin{figure}[H]
             \centering
             \includegraphics[width=\textwidth]{src/ori_input.png}
-            \caption{The predicted control value $u$ in the paper.}
+            \caption{The predicted control value (solid line) $u$ in the paper.}
             \label{fig:ori-input}
         \end{figure}
     \end{minipage}
@@ -250,8 +250,8 @@ Fig.~\ref{fig:ori-input} and \ref{fig:input} is the predicted control sigal from
             \label{fig:input}
         \end{figure}
     \end{minipage}
-
 \end{minipage}
+
 
 Fig.~\ref{fig:ori-output} and \ref{fig:output} is the output sigal from the paper and my implementation, respectively.
 
@@ -272,8 +272,12 @@ Fig.~\ref{fig:ori-output} and \ref{fig:output} is the output sigal from the pape
             \label{fig:output}
         \end{figure}
     \end{minipage}
-
 \end{minipage}
+
+For the output signal, my result is almost same as the result of paper. For the predicted control signal, the predicted control value from this paper 
+has a small over shoot, which doesn't appear in my implementation.
+I think the reason is because the QP parameters $H$ and $f$ is different from the ones they use in this paper, so I cannot perfectly reproduce
+the result. However, the overall convergence is same, so I think my implementation is correct.
 
 \end{document}
 
