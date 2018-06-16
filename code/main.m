@@ -15,7 +15,7 @@ Nsim = 250;
 
 %% augmented state-space model
 [F, Phi,A,B,C] = mpcgain(Am,Bm,Cm,Nc,Np);
-
+  
 
 %% Model input constraint M * dU <= gamma
 % M x dU <= 24 (gamma)
